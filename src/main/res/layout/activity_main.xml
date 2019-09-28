@@ -41,6 +41,18 @@
         android:inputType="text"
         android:textColor="#FF0000"
         />
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="220dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Set password"
+        android:inputType="text"
+        android:textColor="#FF0000"
+        />
     <Button
 
         android:id="@+id/angry_btn"
@@ -59,7 +71,7 @@
         android:shadowRadius="5"
         tools:ignore="MissingConstraints"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="460dp"
         android:layout_marginBottom="60dp"
 
 
