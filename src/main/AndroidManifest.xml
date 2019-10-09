@@ -9,7 +9,12 @@
         android:roundIcon="@drawable/logo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash_screen"
+        <activity
+            android:name=".Navigator"
+            android:label="@string/title_activity_navigator"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Splash_screen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +24,7 @@
         </activity>
         <activity android:name=".Activity3" />
         <activity android:name=".Activity2" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

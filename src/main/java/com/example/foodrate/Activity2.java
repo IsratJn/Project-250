@@ -19,7 +19,7 @@ public class Activity2 extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Activity2.this,Activity3.class);
+                Intent intent = new Intent(Activity2.this,Navigator.class);
                         startActivity(intent);
             }
         });
