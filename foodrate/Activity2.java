@@ -8,25 +8,55 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class Activity2 extends AppCompatActivity {
-
+public class Activity2 extends AppCompatActivity implements View.OnClickListener {
+    private EditText usernameedittext,passwordeddittext;
     private Button login;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        usernameedittext=(EditText)findViewById(R.id.Username1);
+        passwordeddittext=(EditText)findViewById(R.id.Password1);
         login = (Button)findViewById(R.id.angry_btn1);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
+        login.setOnClickListener(this);
+
+
+
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+
+         String username=usernameedittext.getText().toString();
+         String password=passwordeddittext.getText().toString();
+
+
+        if(v.getId()== R.id.angry_btn1){
+
+            Boolean result =  databaseHelper.findPassword(username,password);
+            if(result == true){
                 Intent intent = new Intent(Activity2.this,Navigator.class);
-                        startActivity(intent);
+                startActivity(intent);
             }
-        });
+            else{
+                Toast.makeText(getApplicationContext(),"username and password didnt match",Toast.LENGTH_LONG).show();
+            }
+
+
+        }
+
     }
 
     @Override
