@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class Activity2 extends AppCompatActivity implements View.OnClickListener {
     private EditText usernameedittext,passwordeddittext;
     private Button login;
+
     DatabaseHelper databaseHelper;
 
     @Override
@@ -29,6 +30,7 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
         login = (Button)findViewById(R.id.angry_btn1);
 
         login.setOnClickListener(this);
+        databaseHelper = new DatabaseHelper(this);
 
 
 
@@ -36,23 +38,24 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
 
 
 
+
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-         String username=usernameedittext.getText().toString();
-         String password=passwordeddittext.getText().toString();
+        String username=usernameedittext.getText().toString();
+        String password=passwordeddittext.getText().toString();
 
 
-        if(v.getId()== R.id.angry_btn1){
+        if(view.getId()== R.id.angry_btn1){
 
-            Boolean result =  databaseHelper.findPassword(username,password);
-            if(result == true){
+          //  Boolean result =  databaseHelper.findPassword(username,password);
+          //  if(result == true){
                 Intent intent = new Intent(Activity2.this,Navigator.class);
                 startActivity(intent);
-            }
-            else{
-                Toast.makeText(getApplicationContext(),"username and password didnt match",Toast.LENGTH_LONG).show();
-            }
+            //}
+            //else{
+             // Toast.makeText(getApplicationContext(),"username and password didn't match",Toast.LENGTH_LONG).show();
+            //}
 
 
         }

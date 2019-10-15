@@ -1,10 +1,13 @@
 package com.example.foodrate;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -22,8 +25,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class Navigator extends AppCompatActivity {
+
+public class Navigator extends AppCompatActivity implements View.OnClickListener {
+
+    private ImageButton burger,dessert,soup,chicken;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -31,6 +39,18 @@ public class Navigator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigator);
+
+        burger=(ImageButton)findViewById(R.id.burger);
+        soup=(ImageButton)findViewById(R.id.soup);
+        dessert=(ImageButton)findViewById(R.id.dessert);
+        chicken=(ImageButton)findViewById(R.id.chicken);
+
+        burger.setOnClickListener(this);
+        soup.setOnClickListener(this);
+        dessert.setOnClickListener(this);
+        chicken.setOnClickListener(this);
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,4 +83,26 @@ public class Navigator extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    @Override
+    public void onClick(View view) {
+
+        if(view.getId()==R.id.burger){
+
+            Toast.makeText(Navigator.this,"Burger is clicked",Toast.LENGTH_SHORT).show();
+        }
+        if(view.getId()==R.id.soup){
+
+            Toast.makeText(Navigator.this,"Soup is clicked",Toast.LENGTH_SHORT).show();
+        }
+        if(view.getId()==R.id.dessert){
+
+            Toast.makeText(Navigator.this,"Dessert is clicked",Toast.LENGTH_SHORT).show();
+        }
+        if(view.getId()==R.id.chicken){
+
+            Toast.makeText(Navigator.this,"Chicken is clicked",Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 }

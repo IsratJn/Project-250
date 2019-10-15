@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import java.util.concurrent.atomic.AtomicReference;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -72,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Boolean findPassword (String uname,String pass){
+
        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
 

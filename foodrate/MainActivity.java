@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
         String username=usernameedittext.getText().toString();
         String email=emailidedittext.getText().toString();
         String password=passwordedittext.getText().toString();
