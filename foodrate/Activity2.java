@@ -3,6 +3,7 @@ package com.example.foodrate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 public class Activity2 extends AppCompatActivity implements View.OnClickListener {
     private EditText usernameedittext,passwordeddittext;
     private Button login;
+
+    public static Context context;
 
     DatabaseHelper databaseHelper;
 
@@ -32,6 +35,8 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
         login.setOnClickListener(this);
         databaseHelper = new DatabaseHelper(this);
 
+        context = getApplicationContext();
+
 
 
     }
@@ -48,14 +53,14 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
 
         if(view.getId()== R.id.angry_btn1){
 
-          //  Boolean result =  databaseHelper.findPassword(username,password);
-          //  if(result == true){
+            Boolean result =  databaseHelper.findPassword(context,username,password);
+            if(result == true){
                 Intent intent = new Intent(Activity2.this,Navigator.class);
                 startActivity(intent);
-            //}
-            //else{
-             // Toast.makeText(getApplicationContext(),"username and password didn't match",Toast.LENGTH_LONG).show();
-            //}
+            }
+            else{
+              Toast.makeText(getApplicationContext(),"username and password didn't match",Toast.LENGTH_LONG).show();
+            }
 
 
         }

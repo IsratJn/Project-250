@@ -71,10 +71,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean findPassword (String uname,String pass){
+    public Boolean findPassword (Context context, String uname,String pass){
+
+        Toast.makeText(context,"No data is found",Toast.LENGTH_LONG).show();
 
        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+       cursor.moveToFirst();
+
+
 
         Boolean result = false;
 
@@ -83,8 +88,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        }
        else{
            while(cursor.moveToNext()){
-               String username = cursor.getString(2);
-               String password = cursor.getString(4);
+               String username = cursor.getString(1);
+               String password = cursor.getString(3);
+
+               Toast.makeText(context,username+"   "+password,Toast.LENGTH_SHORT).show();
 
                if(username.equals(uname) && password.equals(pass)){
                    result=true;
