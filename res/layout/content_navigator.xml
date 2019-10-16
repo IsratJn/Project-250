@@ -8,65 +8,103 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
+        android:layout_height="match_parent">
 
-    <SearchView
-        android:layout_marginLeft="40dp"
-        android:layout_width="match_parent"
-        android:layout_marginRight="40dp"
-        android:paddingTop="40dp"
-        android:layout_height="90dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-    </SearchView>
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/burger"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="360dp"
-        android:src="@drawable/burger">
+            <fragment
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
 
-    </ImageButton>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/mobile_navigation" />
 
-    <ImageButton
-        android:id="@+id/soup"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="240dp"
-        android:layout_marginBottom="240dp"
-        android:src="@drawable/soup">
 
-    </ImageButton>
 
-    <ImageButton
-        android:id="@+id/dessert"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="360dp"
-        android:layout_marginBottom="140dp"
-        android:src="@drawable/dessert">
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:outlineAmbientShadowColor="@color/colorAccent"
+                android:queryHint="Type here to serach"
+                >
 
-    </ImageButton>
+            </SearchView>
 
-    <ImageButton
-        android:id="@+id/chicken"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="460dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/chicken">
+            <ImageButton
+                android:id="@+id/burger"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="100dp"
+                android:src="@drawable/burger">
 
-    </ImageButton>
+            </ImageButton>
+
+
+            <ImageButton
+                android:id="@+id/soup"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="240dp"
+                android:src="@drawable/soup">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/dessert"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="140dp"
+                android:src="@drawable/dessert">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/chicken"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="60dp"
+                android:src="@drawable/chicken">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/burger1"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/burger">
+
+            </ImageButton>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 </RelativeLayout>
